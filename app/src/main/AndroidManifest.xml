@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.example.hungryneat"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <application
+        android:allowBackup="true"
+        android:label="HungrynEat"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Theme.HungrynEat">
+        <activity android:name=".guest.G_Profile_My_Profile" />
+        <activity android:name=".guest.G_Profile" />
+        <activity android:name=".guest.G_Reservation" />
+        <activity android:name=".guest.G_Menu" />
+        <activity android:name=".auth.Success" />
+        <activity android:name=".auth.ConfirmPhone" />
+        <activity android:name=".auth.Register" />
+        <activity android:name=".auth.Login" />
+        <activity android:name=".welcome.Welcome" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

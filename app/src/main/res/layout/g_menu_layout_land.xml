@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="#292E32">
+
+    <!-- Main Content Area -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:id="@+id/notification_logo"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Notification logo"
+                android:src="@drawable/ic_notification" />
+
+            <!-- Text Content -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hungry?"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Explore Our Menu!"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="italic"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Search Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/search_edit_text"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:hint="Search..."
+                android:padding="12dp"
+                android:background="@drawable/edittext_background"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="8dp"
+                android:paddingStart="12dp" />
+
+        </LinearLayout>
+
+        <!-- Food Categories -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <LinearLayout
+                android:id="@+id/categories_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Categories will be added programmatically -->
+                <Button
+                    android:id="@+id/category_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#E7AF2F"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/category_drinks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rice"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#E7AF2F"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/category_noodles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Noodles"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#E7AF2F"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/category_rice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desserts"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#E7AF2F"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/category_desserts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Drinks"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#E7AF2F"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- Food List -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <LinearLayout
+                android:id="@+id/food_list_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:shapeAppearanceOverlay="@style/BottomNavCardShape">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/profile_btn"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Profile"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_profile"
+                android:drawablePadding="0dp"
+                android:paddingTop="36dp"
+                android:paddingBottom="36dp"/>
+
+            <Button
+                android:id="@+id/menu_btn"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Menu"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_menu"
+                android:drawablePadding="0dp"
+                android:paddingTop="36dp"
+                android:paddingBottom="36dp"/>
+
+            <Button
+                android:id="@+id/reservation_btn"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Reservation"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_reservation"
+                android:drawablePadding="0dp"
+                android:paddingTop="36dp"
+                android:paddingBottom="36dp"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

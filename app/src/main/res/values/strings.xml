@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HungrynEat</string>
+    <string name="welcome_image">Welcome Image</string>
+    <string name="login_image">Login Image</string>
+    <string name="register_image">Register Image</string>
+    <string name="email_illustration">Email Illustration</string>
+    <string name="success_icon">Success Icon</string>
+</resources>
